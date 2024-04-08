@@ -20,7 +20,7 @@ public partial class MainWindow : Window
                 debugDisplay.Children.Add(new Image() { Width = 100, Height = 100, Source = Imaging.CreateBitmapSourceFromHIcon(WindowInfo.OpenWindows[i].Icon.Handle, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions()) });
             }
             int len2 = debugDisplay.Children.Count;
-            debug.Content = len + " ? " + len2;
+            debug.Content = "WindowInfo.OpenWindows.Count = " + len + "\ndebugDisplay.Children.Count (StackPanel) = " + len2;
         }
         Hooks.Add((uint)EVENT.WINDOW_OPENED, (uint)EVENT.WINDOW_CLOSED, UpdateDebugFg);
         Hooks.Add((uint)EVENT.WINDOW_TITLE_CHANGED, UpdateDebugFg);
